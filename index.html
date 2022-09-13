@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            color: white;
+            font-size: 2rem;
+        }
+
+        .container{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box{
+            min-height: 150px;
+            min-width: 150px;
+            margin: 2px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="symbol1 box"><img src="img/1.jpg" width= 150px alt=""></div>
+        <div class="symbol2 box"><img src="img/2.jpg" width= 150px alt=""></div>
+        <div class="symbol3 box"><img src="img/3.jpg" width= 150px alt=""></div>
+        <div class="symbol4 box"><img src="img/4.jpg" width= 150px alt=""></div>
+        <div class="symbol5 box"><img src="img/5.jpg" width= 150px alt=""></div>
+        <div class="symbol6 box"><img src="img/6.jpg" width= 150px alt=""></div>
+        <div class="symbol7 box"><img src="img/7.jpg" width= 150px alt=""></div>
+    </div>
+    <script>
+        var randomImage=null;
+        console.log("Hello");
+        var count=0;
+        
+        function changeSymbol()
+        {
+            var randomNumber = Math.floor(Math.random()*7)+1;
+            randomImage= document.querySelector(`.symbol${randomNumber}`);
+            var num = Math.floor(Math.random()*7)+1;
+            randomImage.innerHTML=`<img src="img/${num}.jpg" height = 120px width= 120px alt="">`
+        }
+        
+        setInterval(()=>{
+            changeSymbol();
+        },55)
+    </script>
+</body>
+</html>
